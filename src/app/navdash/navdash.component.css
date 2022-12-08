@@ -1,0 +1,20 @@
+
+
+.list-group-item {
+    background-color:rgb(255, 255, 255);
+
+}
+
+i.fa-brands.fa-facebook:hover {
+    color:rgb(58, 38, 235);
+}
+i.fa-brands.fa-linkedin:hover {
+    color:rgb(41, 212, 204);
+}
+i.fa-brands.fa-instagram:hover {
+    color:rgb(151, 58, 82);
+}
+i.fa-solid.fa-user.fa-xl:hover {
+    color: blue;
+
+}

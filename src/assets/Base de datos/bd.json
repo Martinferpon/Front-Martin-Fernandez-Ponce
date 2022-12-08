@@ -1,0 +1,52 @@
+{
+    "nombre": "Martín Agusto",
+    "apellido":"Fernandez Ponce",
+    "edad":42,
+    "estudios":[
+        {
+            "id":1,
+            "titulo":"Bachiller Mercantil",
+            "Institucion": "Colegio Fasta Ing José María Paz",
+            "Inicio": "01-03-1993",
+            "Fin": "12-12-1997"
+
+        },
+        {
+            "id":2,
+            "titulo":"Ing en Sistemas de Información",
+            "Institucion": "UTN- Facultad Regional Tucumán",
+            "Inicio": "01-03-1998",
+            "Fin": "12-12-2003"
+
+        }
+    ],
+    "experiencias":[
+        {
+            "id":1,
+            "Empresa":"M&A Representaciones SRL",
+            "Puesto": "Gerente Comercial La Rioja",
+            "Inicio": "01-04-2004",
+            "Fin": "12-12-2007"
+            
+
+        },
+        {
+            "id":2,
+            "Empresa":"Total Komercial",
+            "Puesto": "Dueño de la Empresa",
+            "Inicio": "01-05-2008",
+            "Fin": "01-08-2015"
+           
+
+        },
+        {
+            "id":3,
+            "Empresa":"Ejército Argentino",
+            "Puesto": "Administrador de Sistemas",
+            "Inicio": "01-08-2015",
+            "Fin": "Actualidad"
+            
+
+        }
+    ]
+}
