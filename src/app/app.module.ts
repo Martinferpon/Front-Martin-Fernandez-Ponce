@@ -16,6 +16,10 @@ import { ExperienciaComponent } from './experiencia/experiencia.component';
 import { HardComponent } from './hard/hard.component';
 import { ProyectosComponent } from './proyectos/proyectos.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { Pagina404Component } from './pagina404/pagina404.component';
+import { LogoutComponent } from './Ventanas/logout/logout.component';
+import { ModalesComponent } from './modales/modales.component';
+
 
 @NgModule({
   declarations: [
@@ -31,6 +35,10 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
      ExperienciaComponent,
      HardComponent,
      ProyectosComponent,
+     Pagina404Component,
+     LogoutComponent,
+     ModalesComponent,
+ 
 
   ],
   imports: [
