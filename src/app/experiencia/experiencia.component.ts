@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Experiencia } from '../model/experiencia';
 import { DatosServiciosService } from '../Servicios/datos.servicios.service';
+import { SExperienciaService } from '../Servicios/s-experiencia.service';
+import { TokenService } from '../Servicios/token.service';
 @Component({
   selector: 'app-experiencia',
   templateUrl: './experiencia.component.html',
@@ -7,13 +10,37 @@ import { DatosServiciosService } from '../Servicios/datos.servicios.service';
 })
 export class ExperienciaComponent implements OnInit {
 
-  constructor(private datos: DatosServiciosService) { }
- experien: any;
+  expe :Experiencia[]=[];
+  constructor(private sExperiencia: SExperienciaService, private tokenService: TokenService) { }
+ isLogged=false;
+
  
   ngOnInit(): void {
-  this.datos.getDatos().subscribe(data=>{
-    this.experien= data.experiencias;
-     })
+
+    this.cargarExperiencia();
+
+     if (this.tokenService.getToken()){
+      this.isLogged=true;
+
+     }else this.isLogged=false;
+     
+  
   }
 
+
+
+cargarExperiencia(): void{
+   this.sExperiencia.lista().subscribe(data =>{this.expe=data});
+} 
+
+delete (id?:number){
+  if(id!= undefined){
+    this.sExperiencia.delete(id).subscribe(data=>{
+      this.cargarExperiencia();
+       },err =>{
+        alert("No se pudo borrar la Experiencia");
+       }
+       )
+  }
+}
 }

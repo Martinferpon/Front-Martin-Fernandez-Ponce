@@ -1,15 +1,28 @@
 
 <section id="sobre-mi " class="about">
     <div class="container text-left mt-5">
-      <div class="row">
+           <div class="row">
+           
         <div class="col-3">
-          <img src="/assets/img/fotomia.png" class= "img-fluid img-thumbnail" alt="..." title="Foto">
-          <h6> Martín Augusto</h6>
-          <h6> Fernández Ponce</h6>
+          <img src={{persona.img}} class= "img-fluid img-thumbnail" alt="..." title="Foto">
+          <H5>{{persona.nombre}}</H5>
+          <H5>{{persona.apellido}}</H5>
         </div>
-        <div class="col-6 "> <h5>Lorem ipsum dolor, icta, reiciendis quam sit cum esse?</h5>
+        <div class="col-6 ">
+          <br>
+        <h4>Acerda de mi</h4>
+         
+        <br>
+          <h5>{{persona.descripcion}}</h5>
         </div>
         <div class="col-3"></div>
+        <div>
+          <button type="button" class="btn btn-primary" routerLink="/edacercade/1" *ngIf="isLogged">
+        
+            Editar Persona
+           </button>
+          
+          </div>
       </div>
     </div>
   </section>

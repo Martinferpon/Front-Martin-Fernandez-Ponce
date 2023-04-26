@@ -1,17 +1,41 @@
 <!-- para poner comentario alt + shift + a -->
-     
+
 <section id="Experiencia " class="experiencia">
-   <div class="container text-left mt-5">
+  <div class="container text-left mt-5">
     <h3>Experiencia Laboral</h3>
-     <div class="row"*ngFor="let exp of experien" >
-        <div class="col-3">
-         </div>
-       <div class="col-6 "> 
-        <h3>Empresa: {{exp.Empresa}}</h3>
-            <h4>Institucion: {{exp.Puesto}} </h4>
-            <h5>Fecha de Inicio: {{exp.Inicio}} Fecha Fin: {{exp.Fin}} </h5>
-       </div>
-       <div class="col-3"></div>
-     </div>
-   </div>
-  </section> 
+    <div class="col-2">
+
+      <button type="button" class="btn btn-secondary" routerLink="/nuevaexp" *ngIf="isLogged">
+
+        Agregar experiencia
+      </button>
+    </div>
+    <div class="row" *ngFor="let Expe of expe">
+      <div class="col-3">
+      </div>
+      <div class="col-6 ">
+        <h3>Empresa: {{Expe.nombreE}}</h3>
+        <h4>Descripcion de la Tarea: {{Expe.descripcionE}} </h4>
+        <!-- <h5>Fecha de Inicio: {{exp.Inicio}} Fecha Fin: {{exp.Fin}} </h5>  -->
+      </div>
+      <div class="col-3">
+        <table class="table">
+          <h6 *ngIf="isLogged">
+            <button type="button" class="btn btn-primary" routerLink="/editexp/{{Expe.id}}">
+              <i class="bi bi-pencil-square"></i>EDITAR
+            </button>
+          </h6>
+
+          <td *ngIf="isLogged">
+            <button type="button" class="btn btn-danger" (click)="delete(Expe.id)">
+              <i class="bi bi-trash"></i>BORRAR
+            </button>
+
+          </td>
+        </table>
+
+      </div>
+
+    </div>
+  </div>
+</section>

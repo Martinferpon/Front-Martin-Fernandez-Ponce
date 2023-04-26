@@ -1,12 +1,46 @@
 <section id="Hard" class="hard">
-    <div class="container text-left mt-5">
-      <div class="row">
-        <div class="col-3">
-          <h3> Hard & Soft Skill</h3>
-         </div>
-        <div class="col-6 "> <h5>Lorem ipsum dolor, icta, reiciendis quam sit cum esse?</h5>
+  <div class="container text-left mt-5">
+
+    <h3> Hard & Soft Skill</h3>
+    <div class="col-2">
+
+      <button type="button" class="btn btn-secondary" routerLink="/newskill" *ngIf="isLogged">
+
+        Agregar Skill
+      </button>
+    </div>
+    <div class="row" *ngFor="let skill of skill">
+      <div class="col-3">
+        <br>
+      </div>
+      <div class="col-6 ">
+        <div class="progress">
+
+          <div class="progress-bar progress-bar-striped" role="progressbar" style="width:{{skill.porcentaje}}%"
+            aria-valuenow="{{ skill.porcentaje } }" aria-valuemin="0" aria-valuemax="100"> {{skill.nombre}}
+            {{skill.porcentaje}}%
+
+          </div>
         </div>
-        <div class="col-3"></div>
+      </div>
+      <div class="col-3">
+        <table class="table">
+          <h6 *ngIf="isLogged">
+            <button type="button" class="btn btn-primary" routerLink="/edithys/{{skill.id}}">
+              <i class="bi bi-pencil-square"></i>EDITAR
+            </button>
+          </h6>
+
+          <td *ngIf="isLogged">
+            <button type="button" class="btn btn-danger" (click)="delete(skill.id)">
+              <i class="bi bi-trash"></i>BORRAR
+            </button>
+
+          </td>
+        </table>
       </div>
     </div>
-   </section>
+  </div>
+
+
+</section>

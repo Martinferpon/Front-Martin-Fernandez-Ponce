@@ -2,5 +2,7 @@
    <a href="https://www.instagram.com/" target="_blank"> <li class="list-group-item"><i class="fa-brands fa-instagram" fa-2xl > </i> </li> </a>
    <a href="https://www.facebook.com/" target="_blank"><li class="list-group-item"><i class="fa-brands fa-facebook" fa-2xl></i></li> </a>
    <a href="https://www.linkedin.com/" target="_blank"><li class="list-group-item"><i class="fa-brands fa-linkedin" fa-2xl></i></li></a>
-   
+   <button type="button" class="btn btn-outline-light" (click)="login()"*ngIf="!islogged"> INGRESAR</button>
+   <button type="button" class="btn btn-outline-light" (click)="onLogOut()"*ngIf="islogged">SALIR</button>
+ 
 </ul>

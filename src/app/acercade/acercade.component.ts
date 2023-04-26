@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { persona } from '../model/persona.model';
+import { PersonaService } from '../Servicios/persona.service';
+import { TokenService } from '../Servicios/token.service';
 
 @Component({
   selector: 'app-acercade',
@@ -7,9 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AcercadeComponent implements OnInit {
 
-  constructor() { }
-
+  persona: persona =null;
+ 
+  constructor(public personaService: PersonaService, private tokenService: TokenService) { }
+  isLogged=false;
   ngOnInit(): void {
-  }
+   
 
+  this.cargarPersona();
+  if (this.tokenService.getToken()){
+    this.isLogged=true;
+
+   }else this.isLogged=false;
+   
+
+  }
+  
+ cargarPersona() {
+
+  this,this.personaService.detail(1).subscribe(data=>
+    {this.persona=data}
+    )
+ }
 }
